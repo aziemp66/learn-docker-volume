@@ -11,11 +11,15 @@ RUN yarn
 
 COPY . /app/
 
+ARG DEFAULT_PORT=80
+
+ENV PORT=${DEFAULT_PORT}
+
+EXPOSE $PORT
+
 VOLUME [ "/app/node_modules" ]
 
 VOLUME [ "/app/temp" ]
-
-EXPOSE 80
 
 CMD ["yarn", "start"]
 
