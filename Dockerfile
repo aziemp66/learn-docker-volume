@@ -4,14 +4,16 @@ FROM node:lts-alpine
 WORKDIR /app
 
 # Path: /app/package.json
-COPY package.json yarn.lock* /app/
+COPY package.json /app/
 
 # run yarn install
-RUN yarn install 
+RUN yarn 
 
 COPY . /app/
 
 VOLUME [ "/app/node_modules" ]
+
+VOLUME [ "/app/temp" ]
 
 EXPOSE 80
 

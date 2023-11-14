@@ -1,4 +1,11 @@
-# .gitignore
 /node_modules
+yarn.lock*
+package-lock.json*
+
+/temp
 
 /feedback
+
+Dockerfile
+
+/.git
